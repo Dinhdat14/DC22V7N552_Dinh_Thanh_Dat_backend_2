@@ -34,10 +34,10 @@ exports.findAll = async (req, res, next) => {
     return res.send(documents);
 };
 exports.findOne = async (req, res, next) => {
-    try{
+    try {
         const contactService = new ContactService(MongoDB.client);
-        const document = await contactService.findById(req.params.id);  
-        if (!document){
+        const document = await contactService.findById(req.params.id);
+        if (!document) {
             return next(new ApiError(404, "Contact not found"));
         }
         return res.send(document);
@@ -69,22 +69,22 @@ exports.update = async (req, res, next) => {
 };
 
 exports.delete = async (req, res, next) => {
-    try{
+    try {
         const contactService = new ContactService(MongoDB.client);
         const deletedCount = await contactService.delete(req.params.id);
         return res.send({
             message: `${deletedCount} contact was deleted successfully!`
         });
     }
-        catch (error) {
-            return next(
-                new ApiError(500, `Could not delete contact with id=${req.params.id}`)
-            );
-        }
-    };
+    catch (error) {
+        return next(
+            new ApiError(500, `Could not delete contact with id=${req.params.id}`)
+        );
+    }
+};
 
 exports.deleteAll = async (req, res, next) => {
-    try{
+    try {
         const contactService = new ContactService(MongoDB.client);
         const deleteCount = await contactService.deleteAll();
         return res.json({

@@ -1,0 +1,24 @@
+{
+  "name": "labs-backend",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/Dinhdat14/CT449_PTUDW#readme",
+  "bugs": {
+    "url": "https://github.com/Dinhdat14/CT449_PTUDW/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dinhdat14/CT449_PTUDW.git"
+  },
+  "license": "ISC",
+  "author": "Dinh Thanh Dat",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  }
+}

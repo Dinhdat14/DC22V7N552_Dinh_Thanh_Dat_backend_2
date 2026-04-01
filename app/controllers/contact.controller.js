@@ -28,7 +28,9 @@ exports.findAll = async (req, res, next) => {
             documents = await contactService.find({});
         }
     } catch (error) {
-        return next(new ApiError(500, "An Error occurred while creating the contact")
+        console.error("CREATE ERROR:", error); // 👈 thêm dòng này
+        return next(
+            new ApiError(500, error.message)
         );
     }
     return res.send(documents);
